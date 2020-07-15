@@ -1,0 +1,7 @@
+dev_host: xxx.xxx.xxx.xxx
+
+spring:
+  application:
+    name: uyaki-hello
+server:
+  port: 5001

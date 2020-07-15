@@ -1,0 +1,12 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    implementation 'com.baomidou:dynamic-datasource-spring-boot-starter:3.1.1'
+    implementation 'com.baomidou:mybatis-plus-boot-starter:3.3.2'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+}
+
+bootJar{
+    enabled = true
+}

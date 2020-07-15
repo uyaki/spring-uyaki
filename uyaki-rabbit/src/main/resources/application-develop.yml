@@ -1,0 +1,10 @@
+dev_host: xxx.xxx.xxx.xxx
+spring:
+  rabbitmq:
+    host: ${dev_host}
+    port: xxxx
+    username: xxxx
+    password: xxxxxxxx
+logging:
+  level:
+    root: debug

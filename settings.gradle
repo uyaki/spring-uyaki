@@ -1,0 +1,9 @@
+rootProject.name = 'spring-uyaki'
+
+include 'uyaki-hello'
+include 'uyaki-web'
+include 'uyaki-exception-boot-starter'
+include 'uyaki-rabbit'
+include 'uyaki-pxc'
+include 'uyaki-redis-sentinel'
+

@@ -1,0 +1,13 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+    implementation 'com.dyuproject.protostuff:protostuff-core:1.0.9'
+    implementation 'com.dyuproject.protostuff:protostuff-runtime:1.0.9'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.11.1'
+
+    runtimeOnly 'mysql:mysql-connector-java'
+}
+
+bootJar {
+    enabled = true
+}

@@ -1,0 +1,21 @@
+dev_host: xxx.xxx.xxx.xxx
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${dev_host}:xxxx/xxxx?useUnicode=true&characterEncoding=UTF-8&serverTimezone=GMT%2b8
+    username: xxx
+    password: xxxxxx
+mybatis-plus:
+  configuration:
+    cache-enabled: true
+    use-generated-keys: true
+    default-executor-type: reuse
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.uyaki.web.entity
+  mapper-locations: classpath:mapper/**/*Mapper.xml
+  global-config:
+    db-config:
+      logic-delete-field: isDeleted  #全局逻辑删除字段值 3.3.0开始支持，详情看下面。
+      logic-delete-value: true # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: false # 逻辑未删除值(默认为 0)
