@@ -1,0 +1,4 @@
+server:
+  port: 8292
+
+swagger-host: localhost:8292

@@ -1,0 +1,13 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation ("io.springfox:springfox-swagger2:${swagger}"){
+        exclude group: 'io.swagger', module: 'swagger-models'
+    }
+    implementation ("io.springfox:springfox-swagger-ui:${swagger}")
+    implementation ('io.swagger:swagger-models:1.5.21')
+}
+
+bootJar {
+    enabled = true
+}
