@@ -6,4 +6,6 @@ include 'uyaki-exception-boot-starter'
 include 'uyaki-rabbit'
 include 'uyaki-pxc'
 include 'uyaki-redis-sentinel'
+include 'uyaki-swagger3'
+include 'uyaki-mongo'
 
