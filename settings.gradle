@@ -9,4 +9,5 @@ include 'uyaki-redis-sentinel'
 include 'uyaki-swagger3'
 include 'uyaki-mongo'
 include 'uyaki-swagger292'
+include 'uyaki-template'
 

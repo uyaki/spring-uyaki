@@ -12,7 +12,6 @@ import java.util.Date;
 /**
  * (User)DTO类
  *
- * @author gknoone
  * @since 2020-07-17 10:39:47
  */
 @Data
