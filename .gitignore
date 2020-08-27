@@ -220,3 +220,4 @@ fabric.properties
 application.yml
 application-myself.yml
 
+*/build/
