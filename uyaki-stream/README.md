@@ -50,7 +50,7 @@ public class StreamAutoConfiguration {
 ```properties
 # rabbit
 spring.cloud.stream.binders.windrabbit.type=rabbit
-spring.cloud.stream.binders.windrabbit.environment.spring.rabbitmq.addresses=101.200.178.114
+spring.cloud.stream.binders.windrabbit.environment.spring.rabbitmq.addresses=localhost
 spring.cloud.stream.binders.windrabbit.environment.spring.rabbitmq.port=15672
 spring.cloud.stream.binders.windrabbit.environment.spring.rabbitmq.username=user
 spring.cloud.stream.binders.windrabbit.environment.spring.rabbitmq.password=password
