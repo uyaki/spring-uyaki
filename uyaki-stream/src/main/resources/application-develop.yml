@@ -1,0 +1,66 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    stream:
+      # https://cloud.spring.io/spring-cloud-static/spring-cloud-stream-binder-rabbit/3.0.1.RELEASE/reference/html/spring-cloud-stream-binder-rabbit.html#rabbit-binder-properties
+      # 可以设置多了个 binder，适配不同的场景
+      binders:
+        windrabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                addresses: localhost
+                port: 15672
+                username: user
+                password: password
+      bindings:
+        login_output:
+          destination: login-user
+          binder: windrabbit
+        login_input: # 通道名，对应代码中的消费监听组
+          destination: login-user # exchange
+          # 消费组，没有定义消费组时，如果启动多实例则一个消息同时都消费，生成多个queue，名为 ${destination}.annoymous.随机字符 ；
+          # 定义了消费组后，多实例共用一个queue，负载消费，queue名为${destination}.${group}组成
+          group: logined-member
+          consumer:
+            # 最大重试次数（默认3）,防止重复消费
+            max-attempts: 1
+          binder: windrabbit
+        logout_output:
+          destination: logout-user
+          binder: windrabbit
+        logout_input: # 通道名，对应代码中的消费监听组
+          destination: logout-user # exchange
+          # 消费组，没有定义消费组时，如果启动多实例则一个消息同时都消费，生成多个queue，名为 ${destination}.annoymous.随机字符 ；
+          # 定义了消费组后，多实例共用一个queue，负载消费，queue名为${destination}.${group}组成
+          group: logout-member
+          consumer:
+            # 最大重试次数（默认3）,防止重复消费
+            max-attempts: 1
+          binder: windrabbit
+      #这一部分是给上边声明的bindings添加配置的，例如队列的ttl，还有要不要给队列配置死信队列
+      rabbit:
+        bindings:
+          login_output:
+            producer:
+              routing-key-expression: headers.routingKey   # 发送端路由key
+          #              delayed-exchange: true    # 开启延时队列，rabbitmq需要安装延迟队列插件
+          login_input:
+            consumer:
+              binding-routing-key: login.user.succeed   # 消费监听路由表达式
+              #              delayed-exchange: true    # 开启延时队列，rabbitmq需要安装延迟队列插件
+              auto-bind-dlq: true   # 绑定死信队列
+              republish-to-dlq: true  # 重投到死信队列并带有报错信息
+          logout_output:
+            producer:
+              routing-key-expression: headers.routingKey   # 发送端路由key
+          #              delayed-exchange: true    # 开启延时队列，rabbitmq需要安装延迟队列插件
+          logout_input:
+            consumer:
+              binding-routing-key: logout.user.succeed   # 消费监听路由表达式
+              #              delayed-exchange: true    # 开启延时队列，rabbitmq需要安装延迟队列插件
+              auto-bind-dlq: true   # 绑定死信队列
+              republish-to-dlq: true  # 重投到死信队列并带有报错信息

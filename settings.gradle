@@ -11,4 +11,5 @@ include 'uyaki-mongo'
 include 'uyaki-swagger292'
 include 'uyaki-template'
 include 'uyaki-xxl-job'
+include 'uyaki-stream'
 

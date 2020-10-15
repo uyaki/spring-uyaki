@@ -6,3 +6,4 @@
 - [读写分离 uyaki-pxc](https://github.com/uyaki/spring-uyaki/blob/master/uyaki-pxc/README.md)
 - [web项目 uyaki-web](https://github.com/uyaki/spring-uyaki/blob/master/uyaki-web/README.md)
 - [swagger3项目 uyaki-swagger3](https://github.com/uyaki/spring-uyaki/blob/master/uyaki-swagger3/README.md)
+- [stream项目 uyaki-stream](https://github.com/uyaki/spring-uyaki/blob/master/uyaki-stream/README.md)

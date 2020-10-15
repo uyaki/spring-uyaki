@@ -1,0 +1,8 @@
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.cloud:spring-cloud-starter-stream-rabbit:3.0.8.RELEASE'
+}
+
+bootJar {
+    enabled = true
+}
