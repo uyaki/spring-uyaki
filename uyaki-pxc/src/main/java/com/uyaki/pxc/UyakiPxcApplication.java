@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * The type Pxc application.
  */
 @SpringBootApplication
-public class PxcApplication {
+public class UyakiPxcApplication {
 
     /**
      * The entry point of application.
@@ -15,7 +15,7 @@ public class PxcApplication {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        SpringApplication.run(PxcApplication.class, args);
+        SpringApplication.run(UyakiPxcApplication.class, args);
     }
 
 }
