@@ -33,7 +33,7 @@ public interface Assert {
      *
      * @param obj 待判断对象
      */
-    default void assertIsNull(Object obj) {
+    default void assertNull(Object obj) {
         if (obj == null) {
             throw newException();
         }
@@ -45,7 +45,7 @@ public interface Assert {
      * @param obj  待判断布尔变量
      * @param args message 占位符对应的参数列表
      */
-    default void assertIsNull(Object obj, Object... args) {
+    default void assertNull(Object obj, Object... args) {
         if (obj == null) {
             throw newException(args);
         }

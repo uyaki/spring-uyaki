@@ -20,7 +20,7 @@ public class ExceptionController {
     @GetMapping("/argument")
     public String argument() {
         String jj = null;
-        ArgumentErrorCodeEnum.VALID_ERROR.assertIsNull(jj, "as", "jj:为空");
+        ArgumentErrorCodeEnum.VALID_ERROR.assertNull(jj, "as", "jj:为空");
         return "hello";
     }
 
@@ -32,7 +32,7 @@ public class ExceptionController {
     @GetMapping("/business")
     public String business() {
         String jj = null;
-        BusinessErrorCodeEnum.LAND_EXPIRATION.assertIsNull(jj, "as");
+        BusinessErrorCodeEnum.LAND_EXPIRATION.assertNull(jj, "as");
         return "hello";
     }
 }
